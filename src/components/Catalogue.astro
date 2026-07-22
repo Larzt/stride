@@ -1,0 +1,59 @@
+---
+import Container from "./Container.astro";
+import EmptyApp from "./EmptyApp.astro";
+import AppCard from "./AppCard.astro";
+
+---
+
+<Container>
+  <section id="apps" class="mt-32 sm:mt-48 lg:mt-64">
+    <div class="border-t-1 my-8 text-white/10"/>
+    <div class="flex flex-col gap-y-4 sm:grid sm:grid-cols-2 sm:gap-y-0 sm:items-end">
+      <div>
+        <p class="font-mono text-xs text-white/60 "><span class="text-brand">01</span> - APPS</p>
+        <p class="font-display font-bold text-4xl lg:text-[3rem]">The catalogue</p>
+      </div>
+        <p class="font-sans text-sm text-white/60 sm:text-right">One app, fully shipped. The rest are <br/> on the way.</p>
+    </div>
+
+    <AppCard
+      class="mt-6"
+      name="Focus"
+      badge="BETA"
+      logo="/logo.svg"
+      image="/focus-mockup.png"
+      url="https://focus.appstride.org"
+      features={[
+        { color: "bg-brand",  title: "Goal-aware targets.", text: "Cut, maintain, or bulk — your macros and calories adjust automatically." },
+        { color: "bg-yellow", title: "Effortless logging.", text: "Record what you eat and watch the day balance in real time." },
+        { color: "bg-pink",   title: "Personalised weekly plans.", text: "Generate full diets tailored to your taste and targets." },
+      ]}
+    >
+      <p slot="title" class="font-display font-semibold text-xl text-balance">Nutrition that does the <span class="text-brand">heavy lifting</span> — you just focus on eating.</p>
+      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">Tell Focus your goal and it handles the math. Calories and macros are calculated for you, logging is quick, and weekly diet plans are generated around the foods you actually like.</p>
+    </AppCard>
+
+    <AppCard class="mt-6" name="Stride Device" badge="PROTOTYPE" logo="/logo.svg" image="/iot-device.jpeg" tech="HARDWARE · IOT" number="02">
+      <p slot="title" class="font-display font-semibold text-xl text-balance">Modular <span class="text-brand">IoT, zero</span> friction.</p>
+      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">Stride takes the complexity out of IoT. A modular device that just works — configure it once, and let it run.</p>
+    </AppCard>
+    <!-- <div class="mt-6 grid grid-cols-2 gap-x-4">
+      <AppCard name="Device" badge="PROTOTYPE" logo="/logo.svg" image="/iot-device.jpeg" tech="HARDWARE · IOT" number="02">
+        <p slot="title" class="font-display font-semibold text-xl">An IoT device in <span class="text-brand">the workshop</span>.</p>
+        <p slot="description" class="font-sans text-sm text-white/80">Built to make focus tangible — hardware that lives on your desk and keeps you on track.</p>
+      </AppCard>
+
+      <AppCard name="App" badge="TBA" logo="/logo.svg" image="/iot-device.jpeg" tech="APP · iOS & Android" number="03">
+        <p slot="title" class="font-display font-semibold text-xl">The next app, <span class="text-brand">coming soon</span>.</p>
+        <p slot="description" class="font-sans text-sm text-white/80">Another tool shaped by the same philosophy. Details on the way.</p>
+      </AppCard>
+    </div> -->
+
+    <!-- <AppCard class="mt-6" name="App" badge="TBA" logo="/logo.svg" image="/iot-device.jpeg" tech="APP · iOS & Android" number="03">
+      <p slot="title" class="font-display font-semibold text-xl">The next app, <span class="text-brand">coming soon</span>.</p>
+      <p slot="description" class="font-sans text-sm text-white/80">Another tool shaped by the same philosophy. Details on the way.</p>
+    </AppCard> -->
+
+    <EmptyApp number="03" title="More coming soon" />
+  </section>
+</Container>

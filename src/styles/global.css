@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Fuentes self-hosted (Fontsource) */
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/hanken-grotesk";
+@import "@fontsource/space-mono/400.css";
+@import "@fontsource/space-mono/700.css";
+
+@theme {
+  --font-sans: "Hanken Grotesk Variable", sans-serif;
+  --font-display: "Space Grotesk Variable", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --color-background: #131311;
+  --color-foreground: #ffffff;
+
+  --color-brand: #a3d9c9;
+  --color-yellow: #e8c275;
+  --color-pink: #e8a4b8;
+  --color-purple: #b59ce8;
+  --color-red: #e26b6b;
+  --color-secondary: #131311;
+  --color-secondary: #1b1b18;
+  --color-surface: #0a0a0a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* deja hueco bajo el header fijo al saltar a una ancla */
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  /* Los <br> del diseño solo controlan saltos de línea en desktop.
+     En móvil dejamos que el texto fluya de forma natural. */
+  @media (max-width: 1023px) {
+    br {
+      display: none;
+    }
+  }
+}

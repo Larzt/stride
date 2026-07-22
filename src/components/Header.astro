@@ -1,0 +1,85 @@
+---
+import Container from "./Container.astro"
+---
+
+<Container>
+  <header id="header" class="px-6 py-4 sm:px-10 lg:px-24 font-sans flex flex-row justify-between items-center">
+  <div class="flex flex-row items-center gap-x-2">
+    <img src="/logo.svg" alt="Logo Stride" class="w-auto h-[20px]">
+    <p class="text-xl font-bold">Stride</p>
+  </div>
+  <div class="flex flex-row gap-x-4 sm:gap-x-8 text-sm items-center">
+    <a href="#apps" class="nav-hash cursor-pointer hidden sm:inline-block py-2">Apps</a>
+    <a href="#philosophy" class="nav-hash cursor-pointer hidden sm:inline-block py-2">Philosophy</a>
+    <a href="https://focus.appstride.org" class="open cursor-pointer rounded-full border-1 border-white/30 py-2 px-4 sm:py-3 sm:px-6 font-semibold">Open Focus</a>
+  </div>
+</header>
+</Container>
+
+<style>
+
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      border-color 0.3s ease,
+      backdrop-filter 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  #header.scrolled {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-hash {
+    position: relative;
+  }
+
+  .nav-hash::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease;
+  }
+  .nav-hash:hover::after {
+    transform: scaleX(1);
+  }
+
+  .open {
+    transition: border-color 300ms ease;
+    transition: transform 300ms ease;
+  }
+  .open:hover {
+    border-color: var(--color-brand);
+    transform: translateY(-5px);
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Ejecutar una vez al cargar por si la página ya está desplazada
+  handleScroll();
+</script>

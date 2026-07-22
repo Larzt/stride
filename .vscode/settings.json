@@ -1,0 +1,9 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+  "tailwindCSS.experimental.configFile": "src/styles/global.css",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+}

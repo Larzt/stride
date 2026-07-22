@@ -1,0 +1,17 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { number, title, subtitle = "STAY TUNED" } = Astro.props;
+---
+
+<div class="flex flex-row items-center justify-between mt-6 p-6 h-full min-h-[88px] border-1 border-dashed border-white/10 rounded-3xl">
+  <div class="flex flex-row items-center gap-x-4">
+    <p class="font-mono text-xs text-white/60">{number}</p>
+    <p class="font-display text-lg text-white/80 font-semibold">{title}</p>
+  </div>
+  <p class="font-mono text-xs text-white/40">{subtitle}</p>
+</div>

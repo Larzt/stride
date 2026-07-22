@@ -1,0 +1,34 @@
+---
+import Container from "./Container.astro";
+
+---
+
+<Container>
+  <section id="launches" class="mt-32">
+    <div class="grid grid-cols-2 border-1 border-white/10 w-auto h-[300px] p-16 overflow-hidden bg-white/5 rounded-4xl">
+      <div class="flex flex-col gap-y-4">
+        <p class="font-mono text-xs"><span class="text-brand">03</span> - LAUNCHES</p>
+        <p class="font-display text-4xl font-semibold">Be the first to know when <br/> new apps launch.</p>
+        <p class="font-display text-sm text-white/60">No noise. Just a short note when <br/> something new ships from the studio.</p>
+      </div>
+      <div class="flex flex-col justify-center">
+        <form class="flex flex-row items-center gap-x-2 bg-secondary rounded-full border-1 border-white/10 p-2 pl-5">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="flex-1 min-w-0 bg-transparent text-white placeholder:text-white/40 text-sm outline-none"
+          />
+          <button
+            type="submit"
+            class="shrink-0 cursor-pointer bg-brand text-black font-semibold rounded-full px-5 py-2 text-sm transition-colors hover:bg-brand/90"
+          >
+            Notify me
+          </button>
+        </form>
+        <p class="font-mono text-xs text-white/40 mt-3 pl-5">We'll only email you about launches. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+</Container>
