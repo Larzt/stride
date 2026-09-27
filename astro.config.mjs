@@ -5,10 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://appstride.org',
   vite: {
-    plugins: [tailwindcss()],
-    preview: {
-      allowedHosts: ['appstride.org', 'www.appstride.org']
-    }
+    plugins: [tailwindcss()]
   }
 });
