@@ -18,24 +18,56 @@ import AppCard from "./AppCard.astro";
 
     <AppCard
       class="mt-6"
-      name="Tagoror"
-      badge="v3.2"
-      logo="/tagoror.svg"
-      image="/tagoror-mockup.png"
-      url="https://tagoror.appstride.org"
+      name="Tenique"
+      badge="v1.3 · WIP"
+      logo="/logo.svg"
+      image="/tenique.png"
+      tech="WINDOWS · DESKTOP"
+      number="01"
       features={[
-        { color: "bg-brand",  title: "Four kinds of note.", text: "Markdown text, checklists, voice notes with a waveform, and reminders." },
-        { color: "bg-yellow", title: "Reminders that ring.", text: "Real dates that sound until you stop them — weekly or yearly if you want." },
-        { color: "bg-pink",   title: "A planner for your week.", text: "Day, week and month views with events, tasks and your own categories." },
+        { color: "bg-brand",  title: "Guided bookings.", text: "Pick-ups, returns, home deliveries and a waiting list, step by step." },
+        { color: "bg-yellow", title: "Several counters, no server.", text: "Every counter shares its data through a SQLite database on a network folder." },
+        { color: "bg-pink",   title: "An admin panel.", text: "Activity, statistics and Excel export, with a self-contained installer built on every push." },
       ]}
     >
-      <p slot="title" class="font-display font-semibold text-xl text-balance">Sticky notes that sit <span class="text-brand">on your desktop</span>, not in your way.</p>
-      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">Tagoror is a frameless, translucent notes widget for Linux and Windows. Notes live where you choose — even on a USB stick — and are backed up on a schedule you set.</p>
+      <p slot="title" class="font-display font-semibold text-xl text-balance">Machine and tool lending, <span class="text-brand">from every counter</span>.</p>
+      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">A Windows desktop app built for Tenique to run the lending of machines and tools from several counters at once. Written in C# with WPF.</p>
     </AppCard>
 
-    <AppCard class="mt-6" name="Stride Device" badge="PROTOTYPE" logo="/logo.svg" image="/iot-device.jpeg" tech="HARDWARE · IOT" number="02">
+    <AppCard
+      class="mt-6"
+      name="Tagoror"
+      badge="v5.0"
+      logo="/tagoror.svg"
+      image="/tagoror-mockup.png"
+      video="/tagoror-trailer.mp4"
+      url="https://tagoror.appstride.org"
+      features={[
+        { color: "bg-brand",  title: "Notes your way.", text: "Text, Markdown, checklists and voice notes with a live waveform — all one Ctrl+K away." },
+        { color: "bg-yellow", title: "Your day, organised.", text: "Reminders that actually ring, a day/week/month planner, timers and birthdays." },
+        { color: "bg-pink",   title: "Synced between computers.", text: "Google Drive, WebDAV or a synced folder, merging per element instead of overwriting." },
+      ]}
+    >
+      <p slot="title" class="font-display font-semibold text-xl text-balance">Notes, reminders and a planner that live <span class="text-brand">on your desktop</span>.</p>
+      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">Tagoror is a frameless, translucent panel for Linux and Windows, written in C++20 with Qt 6. Available on the AUR, as an AppImage, a Flatpak and a Windows installer.</p>
+    </AppCard>
+
+    <AppCard
+      class="mt-6"
+      name="Stride Device"
+      badge="PROTOTYPE"
+      logo="/logo.svg"
+      image="/iot-device.jpeg"
+      tech="ESP32 · IOT"
+      number="03"
+      features={[
+        { color: "bg-brand",  title: "Scriptable.", text: "Your logic lives in scripts written in our own DSL, interpreted on the device." },
+        { color: "bg-yellow", title: "Connected.", text: "WiFi in AP and STA mode, a built-in HTTP server and a TFT display." },
+        { color: "bg-pink",   title: "Modular to the core.", text: "New hardware on the I2C bus, endpoints or DSL commands plug in as isolated modules." },
+      ]}
+    >
       <p slot="title" class="font-display font-semibold text-xl text-balance">Modular <span class="text-brand">IoT, zero</span> friction.</p>
-      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">Stride takes the complexity out of IoT. A modular device that just works — configure it once, and let it run.</p>
+      <p slot="description" class="font-sans text-sm text-white/80 text-pretty">Stride takes the complexity out of IoT. A modular ESP32 device you reconfigure without touching its core — configure it once, and let it run.</p>
     </AppCard>
     <!-- <div class="mt-6 grid grid-cols-2 gap-x-4">
       <AppCard name="Device" badge="PROTOTYPE" logo="/logo.svg" image="/iot-device.jpeg" tech="HARDWARE · IOT" number="02">
@@ -54,6 +86,6 @@ import AppCard from "./AppCard.astro";
       <p slot="description" class="font-sans text-sm text-white/80">Another tool shaped by the same philosophy. Details on the way.</p>
     </AppCard> -->
 
-    <EmptyApp number="03" title="More coming soon" />
+    <EmptyApp number="04" title="More coming soon" />
   </section>
 </Container>

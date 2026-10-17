@@ -9,6 +9,7 @@ interface Props {
   name: string;
   logo: string;
   image: string;
+  video?: string;    // si existe, se muestra en lugar de la imagen (la imagen hace de póster)
   url?: string;
   badge?: string;
   tech?: string;     // tecnología, p.ej. "APP · iOS & Android" o "HARDWARE · IOT"
@@ -17,7 +18,7 @@ interface Props {
   class?: string;
 }
 
-const { name, logo, image, url, badge, tech, number, features = [], class: className } = Astro.props;
+const { name, logo, image, video, url, badge, tech, number, features = [], class: className } = Astro.props;
 const urlLabel = url?.replace(/^https?:\/\//, "");
 ---
 
@@ -63,12 +64,27 @@ const urlLabel = url?.replace(/^https?:\/\//, "");
       )}
     </div>
 
-    <div class="order-first -mx-8 -mt-8 @3xl:order-none @3xl:mx-0 @3xl:mt-0 @3xl:ml-8">
-      <img
-        src={image}
-        alt={`${name} mockup`}
-        class="rounded-t-3xl @3xl:rounded-2xl w-full h-auto @3xl:w-auto @3xl:h-full @3xl:object-cover"
-      />
+    <!-- en dos columnas el medio se posiciona absoluto para que no ensanche su columna ni estire la tarjeta -->
+    <div class="relative order-first -mx-8 -mt-8 @3xl:order-none @3xl:mx-0 @3xl:mt-0 @3xl:ml-8 @3xl:min-h-80">
+      {video ? (
+        <video
+          src={video}
+          poster={image}
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label={`${name} trailer`}
+          class="rounded-t-3xl @3xl:rounded-2xl w-full h-auto @3xl:absolute @3xl:inset-0 @3xl:h-full @3xl:object-cover"
+        />
+      ) : (
+        <img
+          src={image}
+          alt={`${name} mockup`}
+          class="rounded-t-3xl @3xl:rounded-2xl w-full h-auto @3xl:absolute @3xl:inset-0 @3xl:h-full @3xl:object-cover"
+        />
+      )}
     </div>
   </div>
 </div>
